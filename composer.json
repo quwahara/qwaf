@@ -1,17 +1,17 @@
 {
-    "name": "pds/skeleton",
+    "name": "quwahara/qwaf",
     "type": "standard",
-    "description": "Standard for PHP package skeletons.",
-    "homepage": "https://github.com/php-pds/skeleton",
-    "license": "CC-BY-SA-4.0",
+    "description": "Experimental web application framework",
+    "homepage": "https://github.com/quwahara/qwaf",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Pds\\Skeleton\\": "src/"
+            "quwahara\\qwaf\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Pds\\Skeleton\\": "tests/"
+            "quwahara\\qwaf\\": "tests/"
         }
     },
     "bin": ["bin/pds-skeleton"]
