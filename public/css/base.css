@@ -1,0 +1,368 @@
+/*
+    宣言の順序
+    関連するプロパティは下記の順序でグルーピングすること。
+
+    1. Positioning（位置関係）
+    2. Box model（ボックスモデル）
+    3. Typographic（フォント関係）
+    4. Visual（見た目）
+
+    refs http://kia-king.com/code-guide/#css-syntax
+    */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * # Layouts
+ ******************************************************************************/
+
+.global {
+    min-height: 100%;
+}
+
+.prime {
+    display: inline-block;
+    width: 100%;
+    min-height: calc(100% - 5px);
+}
+
+/* viewport-width >= 768px: prime width = 768px
+ **************************************************************************/
+@media only screen and (min-width: 768px) {
+    .prime {
+        margin-left: calc((100% - 768px) / 2);
+        max-width: 768px;
+    }
+}
+
+/* viewport-width >= 1024px: prime width = 768px
+ **************************************************************************/
+@media only screen and (min-width: 1024px) {
+
+    .prime {
+        /* */
+    }
+}
+
+/*
+ * # colors
+ ******************************************************************************/
+
+.global {
+    background-color: #ddd;
+}
+
+.prime {
+    background-color: #fff;
+    box-shadow: 0px 2px 5px hsla(0, 0%, 60%, 1);
+}
+
+/*
+ *
+ ******************************************************************************/
+
+
+
+h1 {
+    font-size: 2.6rem;
+    margin-top: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 1.0rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+h5 {
+    font-size: 1.0rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #333;
+    background-color: #eee;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+pre {
+    margin: 0;
+}
+
+code.hl {
+    display: inline;
+}
+
+code.hljs {
+    background-color: #eee;
+}
+
+/* Debug
+     **************************************************************************/
+
+/*      
+    .global {
+      border: 1px solid blue;
+    }
+    */
+/* 
+    .west {
+      background-color: rgba(255, 0, 0, 0.2);
+      border: 1px solid red;
+    }
+    */
+/*  
+    .contents {
+      border: 1px solid green;
+    }
+    */
+
+.menu-button {
+    width: 44px;
+    height: 40px;
+    line-height: 0;
+    padding-top: 6px;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* display: inline; */
+    font-size: 46px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.site-bar {
+    background-color: #f00;
+}
+
+.site-bar {
+    /* Safari */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+/*
+     * Default: hides west, contents width = 100%
+     **************************************************************************/
+.west {
+    width: 256px;
+    height: 100%;
+    min-height: 600px;
+    position: fixed;
+    left: -256px;
+    padding: 1rem;
+    z-index: 2000;
+    display: inline-block;
+    overflow-y: auto;
+    color: #222;
+    background-color: #d3e3e7;
+    box-shadow: 0px 2px 5px hsla(0, 0%, 60%, 1);
+    transition: 0.5s;
+}
+
+.west h1 {
+    font-size: 1.3rem;
+    margin-top: 0.0rem;
+    margin-bottom: 0.0rem;
+}
+
+.west h2 {
+    font-size: 1.2rem;
+    margin-top: 0.0rem;
+    margin-bottom: 0.0rem;
+}
+
+.west h3 {
+    font-size: 1.1rem;
+    margin-top: 0.0rem;
+    margin-bottom: 0.0rem;
+}
+
+.west h4 {
+    font-size: 1.0rem;
+    margin-top: 0.0rem;
+    margin-bottom: 0.0rem;
+}
+
+.west h5 {
+    font-size: 1.0rem;
+    margin-top: 0.0rem;
+    margin-bottom: 0.0rem;
+}
+
+
+
+.north {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    padding-left: 14px;
+    padding-right: 14px;
+    /* padding: 10px 10px 10px 10px; */
+    display: table;
+    /* padding: 1rem; */
+    /* padding: 0px; */
+    z-index: 1000;
+    /* display: inline-block; */
+    /* overflow-y: auto; */
+    background-color: #ccc;
+    box-shadow: 0px 2px 5px rgb(51, 29, 29);
+}
+
+/* .north__item {
+      display: table-cell;
+      vertical-align: middle;
+    } */
+
+
+.north__inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.contents {
+    width: 100%;
+    /* height: 100%; */
+    min-height: 600px;
+    margin-top: 60px;
+    /* padding: 1rem; */
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+    display: inline-block;
+    /* overflow-y: auto; */
+    background-color: #fff;
+    box-shadow: 0px 2px 5px hsla(0, 0%, 60%, 1);
+}
+
+/*
+     * section
+     **************************************************************************/
+
+.section {
+    margin-top: 0.8rem;
+    margin-bottom: 2.0rem;
+}
+
+.section__syntax {
+    font-size: 1.6rem;
+}
+
+.section__definition {
+    margin-top: 0.8rem;
+}
+
+.section__subsection {
+    margin-top: 0.8rem;
+    padding-left: 0.8rem;
+}
+
+.subsection__signature {
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: #eee;
+}
+
+.subsection__signature-name {
+    color: #333;
+}
+
+.subsection__signature-type {
+    color: #085770;
+}
+
+.subsection__definition {
+    margin-top: 0.8rem;
+}
+
+
+/* viewport-width >= 768px: hides west, contents width = 768px
+ **************************************************************************/
+@media only screen and (min-width: 768px) {
+    .north {
+        max-width: 768px;
+        margin-left: calc(50% - 384px);
+    }
+
+    .contents {
+        max-width: 768px;
+        margin-left: calc(50% - 384px);
+    }
+}
+
+/* viewport-width >= 1024px: west width = 256px, contents width = 768px
+     **************************************************************************/
+@media only screen and (min-width: 1024px) {
+
+    .west {
+        left: calc(50% - 512px);
+    }
+
+    .west-controls {
+        display: none;
+    }
+
+    .west-items {
+        padding-left: 1.0rem;
+    }
+
+    .north {
+        display: none;
+    }
+
+    .contents {
+        margin-top: 0;
+        margin-left: calc(50% - 384px - 128px + 256px);
+    }
+
+    .contents-controls {
+        display: none;
+    }
+
+}
+
+.bench {
+    margin: 12px 0 12px 0;
+    padding: 6px;
+    background-color: #cff3cf;
+}
