@@ -13,13 +13,80 @@
     <div class="global">
 
         <div class="prime">
-            <h1>The one column</h1>
+            <div class="signboard"><span class="brand">Signboard</span></div>
+            <div class="nav">Nav</div>
+            <div class="contents">
+                <h1>The one column</h1>
+                <div>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                    <p>Tremendous sentence. Tremendous sentence. Tremendous sentence.</p>
+                </div>
+            </div>
         </div>
 
     </div>
 
     <script>
         window.onload = function () {
+
+            // Sticky nav
+            // refs https://www.w3schools.com/howto/howto_js_sticky_header.asp
+            window.onscroll = (function () {
+                var nav = document.querySelector(".nav");
+                var navOffsetTop = nav.offsetTop;
+                return function () {
+                    if (window.pageYOffset > navOffsetTop) {
+                        nav.classList.add("sticky");
+                    } else {
+                        nav.classList.remove("sticky");
+                    }
+                };
+            })();
+
+
+
             // (function (diagWidth, contents) {
             //     window.onresize = function () {
             //         diagWidth.textContent = contents.clientWidth;

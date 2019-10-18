@@ -40,6 +40,54 @@ body {
     min-height: calc(100% - 5px);
 }
 
+.signboard {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 4rem;
+    padding-left: 1rem;
+}
+
+.nav {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    max-width: 768px;
+    height: 3rem;
+    padding-left: 1rem;
+
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.contents {
+    width: 100%;
+    min-height: 100%;
+    padding-left: 1rem;
+    display: inline-block;
+}
+
+/*
+ * refs https://www.w3schools.com/howto/howto_js_sticky_header.asp
+ */
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky+.contents {
+    padding-top: 102px;
+}
+
+
+
+
+
+
 /* viewport-width >= 768px: prime width = 768px
  **************************************************************************/
 @media only screen and (min-width: 768px) {
@@ -71,6 +119,24 @@ body {
     box-shadow: 0px 2px 5px hsla(0, 0%, 60%, 1);
 }
 
+.signboard {
+    color: #fff;
+    background-color: #333;
+}
+
+.nav {
+    background-color: #ddd;
+    box-shadow: 0px 2px 5px hsla(0, 0%, 60%, 1);
+}
+
+/*
+ * # font sizes
+ ******************************************************************************/
+.brand {
+    font-size: 2.6rem;
+}
+
+
 /*
  *
  ******************************************************************************/
@@ -81,35 +147,30 @@ h1 {
     font-size: 2.6rem;
     margin-top: 1.6rem;
     margin-bottom: 0.5rem;
-    color: #333;
 }
 
 h2 {
     font-size: 1.8rem;
     margin-top: 1.0rem;
     margin-bottom: 0.5rem;
-    color: #333;
 }
 
 h3 {
     font-size: 1.2rem;
     margin-top: 0.8rem;
     margin-bottom: 0.5rem;
-    color: #333;
 }
 
 h4 {
     font-size: 1.1rem;
     margin-top: 0.8rem;
     margin-bottom: 0.5rem;
-    color: #333;
 }
 
 h5 {
     font-size: 1.0rem;
     padding: 0.5rem;
     border-radius: 5px;
-    color: #333;
     background-color: #eee;
 }
 
@@ -261,7 +322,7 @@ code.hljs {
     vertical-align: middle;
 }
 
-.contents {
+.contents-xxx {
     width: 100%;
     /* height: 100%; */
     min-height: 600px;
@@ -324,7 +385,7 @@ code.hljs {
         margin-left: calc(50% - 384px);
     }
 
-    .contents {
+    .contents-xxx {
         max-width: 768px;
         margin-left: calc(50% - 384px);
     }
@@ -350,7 +411,7 @@ code.hljs {
         display: none;
     }
 
-    .contents {
+    .contents-xxx {
         margin-top: 0;
         margin-left: calc(50% - 384px - 128px + 256px);
     }
