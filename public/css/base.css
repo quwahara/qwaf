@@ -10,6 +10,11 @@
     refs http://kia-king.com/code-guide/#css-syntax
     */
 
+
+/*
+ * # Reset
+ ******************************************************************************/
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -25,6 +30,44 @@ body {
     margin: 0;
     padding: 0;
 }
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+
+/*
+ * # Utility
+ ******************************************************************************/
+
+.hidden {
+    visibility: hidden !important;
+}
+
+.none {
+    display: none !important;
+}
+
+.ib {
+    display: inline-block;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
 
 /*
  * # Layouts
@@ -64,7 +107,9 @@ body {
 .contents {
     width: 100%;
     min-height: 100%;
-    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
     display: inline-block;
 }
 
@@ -83,10 +128,62 @@ body {
     padding-top: 102px;
 }
 
+/* Grid */
 
+form,
+.row {
+    width: 100%;
+}
 
+.row {
+    /* padding-left: 1rem; */
+    /* padding-right: 1.0rem; */
+}
 
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
+[class*="col-"] {
+    width: 100%;
+    float: left;
+    /* padding-right: 1.0rem; */
+    padding-bottom: 1.0rem;
+    /* debug */
+    /* border: 1px solid red; */
+}
+
+[class*="size-"] {
+    width: 100%;
+    /* padding-right: 1.0rem; */
+    /* debug */
+    /* border: 1px solid red; */
+}
+
+button,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+input,
+label,
+select,
+table {
+    min-height: 1px;
+    margin: 0px;
+    /* line-height: 1.75em; */
+}
+
+button,
+input,
+select,
+table {
+    width: 100%;
+}
 
 /* viewport-width >= 768px: prime width = 768px
  **************************************************************************/
@@ -95,7 +192,152 @@ body {
         margin-left: calc((100% - 768px) / 2);
         max-width: 768px;
     }
+
+    /*
+     * Grid for desktop
+     */
+
+    .contents {
+        padding-right: 0.0rem;
+    }
+
+    .row {
+        /* padding-right: 0.0rem; */
+    }
+
+    [class*="col-"] {
+        padding-right: 1.0rem;
+    }
+
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+
+    [class*="size-"] {
+        padding-right: 1.0rem;
+    }
+
+    .size-1 {
+        width: 8.33%;
+    }
+
+    .size-2 {
+        width: 16.66%;
+    }
+
+    .size-3 {
+        width: 25%;
+    }
+
+    .size-4 {
+        width: 33.33%;
+    }
+
+    .size-5 {
+        width: 41.66%;
+    }
+
+    .size-6 {
+        width: 50%;
+    }
+
+    .size-7 {
+        width: 58.33%;
+    }
+
+    .size-8 {
+        width: 66.66%;
+    }
+
+    .size-9 {
+        width: 75%;
+    }
+
+    .size-10 {
+        width: 83.33%;
+    }
+
+    .size-11 {
+        width: 91.66%;
+    }
+
+    .size-12 {
+        width: 100%;
+    }
+
 }
+
+label,
+.label {
+    display: block;
+}
+
+button,
+input,
+select {
+    height: 2.4em;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+    padding-top: 0.0em;
+    padding-bottom: 0.0em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    padding: 0.5em;
+}
+
+
 
 /* viewport-width >= 1024px: prime width = 768px
  **************************************************************************/
@@ -128,6 +370,23 @@ body {
     background-color: #ddd;
     box-shadow: 0px 2px 5px hsla(0, 0%, 60%, 1);
 }
+
+input[type="text"],
+input[type="password"],
+select {
+    border: solid 1px #999;
+}
+
+button {
+    background-color: #ccc;
+    /* color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; */
+}
+
 
 /*
  * # font sizes

@@ -1,0 +1,128 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/github-gist.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+</head>
+
+<body>
+  <div class="global">
+
+    <div class="prime">
+      <div class="signboard"><span class="brand">Signboard</span></div>
+      <div class="contents">
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="ib size-4 text-left">
+              <!-- This col-12 is to fit with right-margin for button in col-6 -->
+              <div class="col-12">
+                <h1>Log in</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="ib size-4 text-left">
+              <!-- This col-12 is to fit with right-margin for button in col-6 -->
+              <div class="col-12">
+                <label>Username</label>
+                <input type="text" name="username">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="ib size-4 text-left">
+              <!-- This col-12 is to fit with right-margin for button in col-6 -->
+              <div class="col-12">
+                <label>Password</label>
+                <input type="password" name="password">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="ib size-4">
+              <div class="col-6">
+                <button type="submit">Log in</button>
+              </div>
+              <div class="col-6">
+                <button type="submit">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    window.onload = function () {
+
+      // Sticky nav
+      // refs https://www.w3schools.com/howto/howto_js_sticky_header.asp
+      window.onscroll = (function () {
+        var nav = document.querySelector(".nav");
+        if (!nav) {
+          return function () { };
+        }
+        var navOffsetTop = nav.offsetTop;
+        return function () {
+          if (window.pageYOffset > navOffsetTop) {
+            nav.classList.add("sticky");
+          } else {
+            nav.classList.remove("sticky");
+          }
+        };
+      })();
+
+
+
+      // (function (diagWidth, contents) {
+      //     window.onresize = function () {
+      //         diagWidth.textContent = contents.clientWidth;
+      //     };
+      // })(
+      //     document.querySelector(".diag__width"),
+      //     document.querySelector(".contents")
+      // );
+
+      // (function (west) {
+      //     document.querySelector(".contents-controls__open-button").onclick = function () {
+      //         west.style.left = "0px";
+      //     };
+      //     document.querySelector(".west-controls__close-button").onclick = function () {
+      //         west.style.left = "-256px";
+      //     };
+      // })(
+      //     document.querySelector(".west")
+      // );
+
+      // hljs.initHighlighting();
+
+      // var hls = document.querySelectorAll("code.hl");
+      // for (var i = 0; i < hls.length; ++i) {
+      //   hljs.highlightBlock(hls.item(i));
+      // }
+    };
+  </script>
+
+
+
+
+
+</body>
+
+</html>
